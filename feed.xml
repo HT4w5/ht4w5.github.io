@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>ht4w5's Blog</title>
+  <subtitle>ht4w5's Blog</subtitle>
+  <link href="https://ht4w5.github.io/feed.xml" rel="self"/>
+  <link href="https://ht4w5.github.io/"/>
+  <id>https://ht4w5.github.io/</id>
+  <author><name>ht4w5</name></author>
+  <updated>2026-09-10T20:18:47Z</updated>
+  <entry>
+    <title>Hello, World</title>
+    <link href="https://ht4w5.github.io/posts/hello-world/"/>
+    <id>https://ht4w5.github.io/posts/hello-world/</id>
+    <updated>2025-09-11T12:00:00Z</updated>
+    <summary><![CDATA[The first post on this blog.]]></summary>
+    <content type="html"><![CDATA[<p>Test.</p>
+<h2 id="code-examples">Code examples</h2>
+<pre class="go"><code>package user
+
+import (
+    &quot;fmt&quot;
+    &quot;net/mail&quot;
+    &quot;uuid&quot;
+)
+
+type User struct {
+    id    uuid.UUID
+    email string
+}
+
+func NewUser(email string) (u User, err error) {
+    _, err = mail.ParseAddress(email)
+    if err != nil {
+        err = fmt.Errorf(&quot;invalid email %q: %w&quot;, email, err)
+        return
+    }
+    u.id = uuid.NewV7()
+    u.email = email
+    return
+}
+
+func (u *User) ID() uuid.UUID { return u.id }
+func (u *User) Email() string { return u.email }</code></pre>
+<pre class="json"><code>{
+  &quot;Rx&quot;: 2050882821,
+  &quot;Tx&quot;: 518592203,
+  &quot;Misses&quot;: 12888398,
+  &quot;Wraps&quot;: 868,
+  &quot;Collisions&quot;: 0,
+  &quot;Corruptions&quot;: 0,
+  &quot;Vacuums&quot;: 98,
+  &quot;Allocated&quot;: 1006632960
+}</code></pre>
+<h2 id="images">Images</h2>
+<figure>
+<img src="Untitled.png" alt="cat" />
+<figcaption aria-hidden="true">cat</figcaption>
+</figure>]]></content>
+  </entry>
+</feed>
